@@ -5,8 +5,8 @@ MAINTAINER Oscar Prieto <oscarmpp@gmail.com>
 RUN apk add --no-cache ca-certificates libstdc++
 
 # Install packages only needed for building
-RUN apk add --no-cache --virtual .build-dependencies build-base
-    && pip install locustio pyzmq influxdb
+RUN apk add --no-cache --virtual .build-dependencies build-base \
+    && pip install locustio pyzmq influxdb \
     && apk del .build-dependencies
 
 # Create a workdir
